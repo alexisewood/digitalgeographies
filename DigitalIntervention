@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Alexis's Webpage Proposal </title>
+<style> body{background-color:rgb(0,0,0);background-image:url(http://www.zingerbugimages.com/backgrounds/zebra_print.jpg);background-position:top left;background-repeat:repeat;background-attachment:fixed;}
+  #box1 {
+    width: 70%;
+    border: 2px solid navy;
+    margin: 0 auto;
+    color: #FFF;
+    background: navy;
+    opacity: 1.0;
+    border-radius: 5px
+  }
+  h1 {font-family: Papyrus; font-size: 30px; color: purple; text-align: center; font-weight:900}
+  p {font-family: Papyrus; font-size: 15px; text-align: left;}
+h2 {font-family: Papyrus; font-size: 20px; text-align: left;}
+h3 {font-family: Papyrus; font-size: 5px; text-align: left;}
+a:link {
+  color: green;
+  background-color: transparent;
+  text-decoration: none;
+ </style>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <div class="image">
+
+  <div id="box1">
+  <h1> Digital Intervention Project </h1>
+  <h2> Podcast </h2> 
+  <audio controls> == $0
+    <source src="https://alexisewood.github.io/digitalgeographies/Proposal.mp3"> </audio>
+
+  <h2> References </h2> 
+  <p> 1. <a href="https://sensorymaps.com/contact/">This </a> is a link to Dr. Kate Mclean's website - highly recommend having a look around. </p> 
+<p> 2. <a href="https://www.atlasobscura.com/articles/art-mapping-smell-smellscapes-kate-mclean">This </a> is a link to the article explaining how “smellwalks” work. It's not in The Guardian, but in Atlas Obscura (sorry for the mistake).</p>
+<p> 3. <a href="http://projects.dailycal.org/2017/where-we-cry/">This </a> is a map developed by The Daily Californian titled, "Where We Cry" geocoded with where people cried and why. </p> 
+
+<h3> I hope you enjoyed reading in Papyrus. </h3>
+ 
+    </div>
+</body>
+</html>

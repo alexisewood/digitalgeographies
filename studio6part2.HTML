@@ -1,0 +1,105 @@
+!DOCTYPE html>
+<!--This is how you comment for html-->
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title> My Map </title>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <script src='https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css' rel='stylesheet' />
+</head>
+<body>
+  <style>
+  /*this CSS section is where you style your page*/
+  /*this is how you comment in CSS*/
+  body { margin: 0; padding: 0; }
+  #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+  </style>
+  <div id='map'></div>
+  <script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoiYWV3NzgiLCJhIjoiY2tmbXl6dXE4MDdyYTJ4b2Z2ZXg4a2c1ayJ9.h8g09oGJgxNvp1ybI24URg';
+
+  //Call in your Map
+  var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/aew78/ckiqp425z54bi17p7gjpaacpl'
+  });
+
+  // Initialize the geolocate control.
+  var geolocate = new mapboxgl.GeolocateControl({
+    positionOptions: {
+      enableHighAccuracy: true
+    },
+    trackUserLocation: true
+  });
+
+  // Add the control to the map.
+  map.addControl(geolocate);
+
+  map.on('load', function() {
+   geolocate.trigger();
+   map.addSource('places', {
+     'type': 'geojson',
+     'data': {
+       'type': 'FeatureCollection',
+       'features': [
+         {
+           'type': 'Feature',
+           'properties': {
+             'title': 'Very large fish lives here',
+             'description': 'Monstro the fish'
+           },
+           'geometry': {
+             'type': 'Point',
+             'coordinates': [
+             0.12878894805908203,
+             52.213970481909335
+             ]
+           }
+         },
+         {
+           'type': 'Feature',
+           'properties': {
+             'title': 'Cambridge cows live here',
+             'description': 'Very friendly but too many to name without post-it notes.'
+           },
+           'geometry': {
+             'type': 'Point',
+             'coordinates': [
+             0.12402534484863281,
+             52.21226128389722
+             ]
+           }
+         },
+         {
+           'type': 'Feature',
+           'properties': {
+             'title': 'Best thai food lives here',
+             'description': 'they let me order coconut rice by itself'
+           },
+           'geometry': {
+             'type': 'Point',
+             'coordinates': [
+             0.12952923774719238,
+             52.20492413315462
+             ]
+           }
+         }
+       ]
+     }
+   });
+   // Add a layer showing the places.
+     map.addLayer({
+         'id': 'places',
+         'type': 'symbol',
+         'source': 'places',
+         'layout': {
+             'icon-image': 'aquarium-15',
+             'icon-allow-overlap': true
+         }
+     });
+ });
+
+</script>
+</body>
+</html>
